@@ -291,6 +291,13 @@ EFS share, EFS mount points
 
 
 ## Simple Storage Service (S3)
+- S3 storage classes
+  - bucket:
+    - container for objects stored in S3
+    - 
+- S3 Glacier
+- lifecycle management
+- cross-region replication
 
 
 
