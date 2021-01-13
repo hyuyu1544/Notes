@@ -294,7 +294,13 @@ EFS share, EFS mount points
 - S3 storage classes
   - bucket:
     - container for objects stored in S3
-    - 
+    - volume and object 無上限
+    - 命名限制：不能重複, 3-63個字符, 不能有ip格式, 小寫, 不能有大寫或底線
+  - object:
+    - 整體存在bucket中（data and metadata）
+    - 0 bytes ~ 5TB
+    - 單個obj最大上傳 5GB
+    - 分段上傳可到 100MB~5TB
 - S3 Glacier
 - lifecycle management
 - cross-region replication
