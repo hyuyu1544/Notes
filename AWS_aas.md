@@ -313,9 +313,22 @@ EFS share, EFS mount points
     - access control lists (ACL)
   - <a href="https://ppt.cc/fUTCDx"><img src="https://ppt.cc/fUTCDx@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
   - <a href="https://ppt.cc/fXTdhx"><img src="https://ppt.cc/fXTdhx@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
+  - <a href="https://ppt.cc/fLBvVx"><img src="https://ppt.cc/fLBvVx@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
 - S3 Glacier
+  - 歸檔解決方案
+  - 最低成本的儲存obj
+  - 99.99999..% of durabilty across 3 AZs
+  - 3 retrieval options:
+    - Expedited (1-5分鐘)
+    - standard (3-5小時)
+    - bulk (5-12 hours)
 - lifecycle management
-- cross-region replication
+  - delete an object after expiry time
+  - archive an object to Glacier after expiry time
+  - can be restored back from glacier to Amazon S3 
+  - <a href="https://ppt.cc/f10MMx"><img src="https://ppt.cc/f10MMx@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
+- cross-region replication (跨ＡＺ複製)
+  - <a href="https://ppt.cc/fbnG3x"><img src="https://ppt.cc/fbnG3x@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
 
 
 
