@@ -258,7 +258,21 @@ EBS是 EC2預設的磁碟區
   - not available in all regions 
   - cross region capability not available
   - 與s3和EBS相比，設置更為複雜
-- Mount target(3:10)
+- Mount target
+  - required to access EFS from a VPC
+  - VPC NFS endpoint
+  - has an IP address and a DNS name you can use in the Linux mount command
+  - can be mounted by multiple EC2 instances
+  - can be in different subnet to instance but different AZ
+- accessing file system from ec2
+  - requires an NFS client
+  - mount file system using the Linux mount command similar to EBS and instance store
+  - file system DNS name (easiest) or mount point DNS name can be used to mount EFS on EC2.
+- EFS security
+  - IAM user permissions for create, update and delete
+  - EC2 security group can be set as inbound rules for EFS and vice versa
+  - NACLs can be used to control traffic
+  - Linux/Unix file root-only permissions by default
 
 補充:
   - file: EFS
@@ -267,8 +281,13 @@ EBS是 EC2預設的磁碟區
 
 
 ## [Hands On] - Elastic File Service (EFS)
-
-
+EFS share, EFS mount points
+- create EFS share
+- security group for EFS
+- 開一個ec2，point到EFS
+  - 進到ec2下指令
+  - 要使用DNS name
+  - 指令在EFS找得到
 
 
 ## Simple Storage Service (S3)
