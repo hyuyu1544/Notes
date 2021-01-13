@@ -301,6 +301,12 @@ EFS share, EFS mount points
     - 0 bytes ~ 5TB
     - 單個obj最大上傳 5GB
     - 分段上傳可到 100MB~5TB
+  - S3 is a web store not a file system
+    - eventually consistent: 跨AZ得到的obj保持一致
+    - read after right consistency for new objects
+    - flow: `upload new obj` -> `synchronised` -> `S3 index update` -> `success returned`
+    -  updates or deletes them by updates are also called overwrite puts they're not going to be read after right or read after delete consistent they're eventually consistent
+    - flow: `update or delete存在的obj` -> `success returned` -> `synchronised` -> `S3 index update`
 - S3 Glacier
 - lifecycle management
 - cross-region replication
