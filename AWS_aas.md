@@ -312,7 +312,7 @@ EFS share, EFS mount points
     - bucket policies
     - access control lists (ACL)
   - https://ibb.co/n1WF9Yj
-  - [url=https://ppt.cc/fXTdhx][img]https://ppt.cc/fXTdhx@.png[/img][/url]
+  - <a href="https://ppt.cc/fXTdhx"><img src="https://ppt.cc/fXTdhx@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
 - S3 Glacier
 - lifecycle management
 - cross-region replication
