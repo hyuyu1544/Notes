@@ -311,7 +311,7 @@ EFS share, EFS mount points
     - IAM policies
     - bucket policies
     - access control lists (ACL)
-  - https://ibb.co/n1WF9Yj
+  - <a href="https://ppt.cc/fUTCDx"><img src="https://ppt.cc/fUTCDx@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
   - <a href="https://ppt.cc/fXTdhx"><img src="https://ppt.cc/fXTdhx@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
 - S3 Glacier
 - lifecycle management
