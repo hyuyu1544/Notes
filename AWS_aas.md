@@ -269,6 +269,8 @@ EBS是 EC2預設的磁碟區
 ## [Hands On] - Elastic File Service (EFS)
 
 
+
+
 ## Simple Storage Service (S3)
 
 
