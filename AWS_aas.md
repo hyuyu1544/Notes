@@ -307,6 +307,10 @@ EFS share, EFS mount points
     - flow: `upload new obj` -> `synchronised` -> `S3 index update` -> `success returned`
     -  updates or deletes them by updates are also called overwrite puts they're not going to be read after right or read after delete consistent they're eventually consistent
     - flow: `update or delete存在的obj` -> `success returned` -> `synchronised` -> `S3 index update`
+  - Secure by default, but can be modify by:
+    - IAM policies
+    - bucket policies
+    - access control lists (ACL)
 - S3 Glacier
 - lifecycle management
 - cross-region replication
