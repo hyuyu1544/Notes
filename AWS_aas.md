@@ -336,3 +336,7 @@ EFS share, EFS mount points
 graph QL : 是一種為API設計的資料查詢(修改)的語言 (https://ithelp.ithome.com.tw/articles/10200678)
 
 cli: https://aws.amazon.com/cli/
+
+
+https://aws.amazon.com/tw/s3/faqs/
+https://docs.aws.amazon.com/zh_tw/AWSEC2/latest/UserGuide/placement-groups.html
