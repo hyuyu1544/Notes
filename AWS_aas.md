@@ -189,7 +189,7 @@ https://aws.amazon.com/tw/compliance/
 ## [Hands On] - Connecting to EC2 Windows Instances
 以window instances為例, 以`RDP`連接EC2
 
-- RDP connect to ec2 (window instances) (rdp port用`3389`)
+- RDP(`Remote Desktop Port`) connect to ec2 (window instances) (rdp port用`3389`)
   1. 生成.pem 檔 
   2. 在security group把rdp port打開
   3. 在 EC2 畫面點actions > get windows password , then upload `.pem`
