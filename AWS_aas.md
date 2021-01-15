@@ -340,3 +340,7 @@ cli: https://aws.amazon.com/cli/
 
 https://aws.amazon.com/tw/s3/faqs/
 https://docs.aws.amazon.com/zh_tw/AWSEC2/latest/UserGuide/placement-groups.html
+
+## note
+
+### AWS cloudTrail & AWS cloudWatch
