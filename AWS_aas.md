@@ -344,3 +344,6 @@ https://docs.aws.amazon.com/zh_tw/AWSEC2/latest/UserGuide/placement-groups.html
 ## note
 
 ### AWS cloudTrail & AWS cloudWatch
+
+## ref
+https://awslc.medium.com/aws-solutions-architect-associate%E8%AD%89%E7%85%A7%E6%BA%96%E5%82%99-saa-c01-%E8%88%87-saa-c02-ee4cd66ca2b0
