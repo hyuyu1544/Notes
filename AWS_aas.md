@@ -337,14 +337,22 @@ EFS share, EFS mount points
 - subnets addressing
   - vpc 可以跨AZ, 但不能跨region (一個region有多個AZ)
   - vpc在不同AZ下，可以切分不同subnets(e.g. VPC subnet 1, ...)
-  - TCP/IP(v4) is 32 bit (255.255.255.255 -> 11111111.11111111.11111111.11111111)
-  - private IP(有三類) (only used in private network)
-    - 10開頭 （e.g. 10.0.0.0/8）
-    - 172.16-31開頭 (e.g. 172.16.0.0/12)
-    - 192.168開頭（e.g. 192.168.0.0/16） 
-  - /數字 -> subnet mask （前面幾位數都是1，不給變）
-  - IP尾數 0,1,2,3,255 是AWS御用位址（不給使用者使用）
-  - 舉例： 如果VPC的IP是192.168.1.0, 他的subnet就可以使用 `192.168.1.4`~`192.168.1.254`
+  - TCP/IP(v4)
+    - TCP/IP(v4) is 32 bit (255.255.255.255 -> 11111111.11111111.11111111.11111111)
+    - private IP(有三類) (only used in private network)
+      - 10開頭 （e.g. 10.0.0.0/8）
+      - 172.16-31開頭 (e.g. 172.16.0.0/12)
+      - 192.168開頭（e.g. 192.168.0.0/16） 
+    - /數字 -> subnet mask （前面幾位數都是1，不給變）(classless inter-domain routing, CIDR)
+    - IP尾數 0,1,2,3,255 是AWS御用位址（不給使用者使用）
+    - 舉例： 如果VPC的IP是192.168.1.0, 他的subnet就可以使用 `192.168.1.4`~`192.168.1.254`
+    - 練習 172.31.16.0/20  (ans:`172.31.16.4` ~`172.31.31.254`)
+    - VPC的IP range要比subnet要來得大(e.g. VPC`192.31.0.0/16`, subnet`192.31.0.0/20`)
+    - IP設得太大或太小，系統都會溫柔地提醒你XD
+    - AWS VPC提供`/16`~`/28`的範圍
+  - TCP/IP(v6)
+    
+  
 - connecting to a VPC
 - route tables
 - public and private subnet
