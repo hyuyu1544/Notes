@@ -386,7 +386,8 @@ EFS share, EFS mount points
   - stateful && stateless
     - stateful : 輸入會有明確回應（允許的狀態或拒絕）
     - stateless: 輸入不必有明確回應，一定是同意的才會輸出
-### Demonstration - VPC Networking
+### [Hand on] - VPC Networking
+  create a wordpress ec2 and setting VPC
 ### AWS WAF, AWS Shield & AWS Firewall Manager
 ### CloudFormation
 ### Lab Session -CloudFormation
