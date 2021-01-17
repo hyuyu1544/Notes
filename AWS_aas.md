@@ -331,6 +331,17 @@ EFS share, EFS mount points
   - <a href="https://ppt.cc/fbnG3x"><img src="https://ppt.cc/fbnG3x@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
 
 
+## 51-57 week3
+
+### Advanced Virtual Private Cloud (VPC)
+
+### Demonstration - VPC Networking
+### AWS WAF, AWS Shield & AWS Firewall Manager
+### CloudFormation
+### Lab Session -CloudFormation
+### Advanced CloudFormation
+### Advanced Lab 1 - Programming and Deployment with CloudFo…
+
 
 ## 後記
 graph QL : 是一種為API設計的資料查詢(修改)的語言 (https://ithelp.ithome.com.tw/articles/10200678)
