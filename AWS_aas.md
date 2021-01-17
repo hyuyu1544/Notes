@@ -389,6 +389,14 @@ EFS share, EFS mount points
 ### [Hand on] - VPC Networking
   create a wordpress ec2 and setting VPC
 ### AWS WAF, AWS Shield & AWS Firewall Manager
+- Distributed deniel of service (DDoS)
+  - denial of service (DoS)
+  - Distributes deniel of service (DDos)
+  - 
+- AWS shield
+- WAF
+- AWS firewall manager
+- panetration test
 ### CloudFormation
 ### Lab Session -CloudFormation
 ### Advanced CloudFormation
