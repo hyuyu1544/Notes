@@ -361,12 +361,27 @@ EFS share, EFS mount points
   - virtual private network: vpc <-> virtual gateway <-> vpn connection(dual tunnel) <-> customer gateway(通常架在使用者端)
 - route tables(main route table && custom route table)
   - 當 create a VPC, route table會自動產生(both)
-  - 需要有 （1）internet gateway（2）public IP address（3）custom route才可連接
+  - 需要有 （1）internet gateway（2）public IP address（3）`custom route`,`internet gateway`,`subnet`要有通 才可連接
   - main route table
+    - allow local traffic within VPC
+    - explicitly associated to all subnet
   - custom route table
+    - allow local traffic within VPC
+    - route to internet gateway 
+    - explicitly associated to the public subnet
+    - 通常也會在這裡指向全網域 e.g. 0.0.0.0/0
 - public and private subnet
+  - public subnet 放custom route table
+  - private subnet 放 main route table
 - network address translation(NAT)
-- VPC security
+  - 可以直接起一個NAT instance(EC2), 也可以做一個NAT gateway
+  - 做為一個互聯網代理 （可連到外部網路0.0.0.0/0）
+- VPC security 
+  - security group
+  - network access control list(ACLs)
+  - flow logs (cloudwatch)
+  - security group v.s. ACLs
+  <a href="https://ppt.cc/f0Msdx"><img src="https://ppt.cc/f0Msdx@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
 ### Demonstration - VPC Networking
 ### AWS WAF, AWS Shield & AWS Firewall Manager
 ### CloudFormation
