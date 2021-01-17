@@ -381,7 +381,7 @@ EFS share, EFS mount points
   - network access control list(ACLs)
   - flow logs (cloudwatch)
   - security group v.s. ACLs
-  <a href="https://ppt.cc/f0Msdx"><img src="https://ppt.cc/f0Msdx@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
+  - <a href="https://ppt.cc/f0Msdx"><img src="https://ppt.cc/f0Msdx@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
 ### Demonstration - VPC Networking
 ### AWS WAF, AWS Shield & AWS Firewall Manager
 ### CloudFormation
