@@ -351,10 +351,19 @@ EFS share, EFS mount points
     - IP設得太大或太小，系統都會溫柔地提醒你XD
     - AWS VPC提供`/16`~`/28`的範圍
   - TCP/IP(v6)
-    
-  
+    - TCP/IP(v6) is 128 bit
+    - VPC: fixed at `/56`
+    - subnet: fixed at `/64`
+    - all TCP/IP(v6) addresses is public (Elastic IPv6 not supported, IPv4 only)
+     
 - connecting to a VPC
-- route tables
+  - 可直接被外面連接：vpc <->interet gateway 
+  - virtual private network: vpc <-> virtual gateway <-> vpn connection(dual tunnel) <-> customer gateway(通常架在使用者端)
+- route tables(main route table && custom route table)
+  - 當 create a VPC, route table會自動產生(both)
+  - 需要有 （1）internet gateway（2）public IP address（3）custom route才可連接
+  - main route table
+  - custom route table
 - public and private subnet
 - network address translation(NAT)
 - VPC security
