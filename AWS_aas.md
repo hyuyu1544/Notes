@@ -334,7 +334,22 @@ EFS share, EFS mount points
 ## 51-57 week3
 
 ### Advanced Virtual Private Cloud (VPC)
-
+- subnets addressing
+  - vpc 可以跨AZ, 但不能跨region (一個region有多個AZ)
+  - vpc在不同AZ下，可以切分不同subnets(e.g. VPC subnet 1, ...)
+  - TCP/IP(v4) is 32 bit (255.255.255.255 -> 11111111.11111111.11111111.11111111)
+  - private IP(有三類) (only used in private network)
+    - 10開頭 （e.g. 10.0.0.0/8）
+    - 172.16-31開頭 (e.g. 172.16.0.0/12)
+    - 192.168開頭（e.g. 192.168.0.0/16） 
+  - /數字 -> subnet mask （前面幾位數都是1，不給變）
+  - IP尾數 0,1,2,3,255 是AWS御用位址（不給使用者使用）
+  - 舉例： 如果VPC的IP是192.168.1.0, 他的subnet就可以使用 `192.168.1.4`~`192.168.1.254`
+- connecting to a VPC
+- route tables
+- public and private subnet
+- network address translation(NAT)
+- VPC security
 ### Demonstration - VPC Networking
 ### AWS WAF, AWS Shield & AWS Firewall Manager
 ### CloudFormation
@@ -355,12 +370,7 @@ https://docs.aws.amazon.com/zh_tw/AWSEC2/latest/UserGuide/placement-groups.html
 ## note
 
 ### AWS cloudTrail & AWS cloudWatch
-- subnets addressing
-- connecting to a VPC
-- route tables
-- public and private subnet
-- network address translation(NAT)
-- VPC security
+
 
 ## ref
 https://awslc.medium.com/aws-solutions-architect-associate%E8%AD%89%E7%85%A7%E6%BA%96%E5%82%99-saa-c01-%E8%88%87-saa-c02-ee4cd66ca2b0
