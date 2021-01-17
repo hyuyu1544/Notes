@@ -331,7 +331,7 @@ EFS share, EFS mount points
   - <a href="https://ppt.cc/fbnG3x"><img src="https://ppt.cc/fbnG3x@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
 
 
-## 51-57 week3
+## week3
 
 ### Advanced Virtual Private Cloud (VPC)
 - subnets addressing
@@ -381,7 +381,11 @@ EFS share, EFS mount points
   - network access control list(ACLs)
   - flow logs (cloudwatch)
   - security group v.s. ACLs
-  - <a href="https://ppt.cc/f0Msdx"><img src="https://ppt.cc/f0Msdx@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
+    - <a href="https://ppt.cc/f0Msdx"><img src="https://ppt.cc/f0Msdx@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
+    - https://medium.com/awesome-cloud/aws-difference-between-security-groups-and-network-acls-adc632ea29ae#:~:text=Security%20groups%20are%20tied%20to,will%20follow%20rules%20of%20NACL.&text=This%20means%20any%20instances%20within%20the%20subnet%20group%20gets%20the%20rule%20applied
+  - stateful && stateless
+    - stateful : 輸入會有明確回應（允許的狀態或拒絕）
+    - stateless: 輸入不必有明確回應，一定是同意的才會輸出
 ### Demonstration - VPC Networking
 ### AWS WAF, AWS Shield & AWS Firewall Manager
 ### CloudFormation
