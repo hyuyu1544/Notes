@@ -390,10 +390,21 @@ EFS share, EFS mount points
   create a wordpress ec2 and setting VPC
 ### AWS WAF, AWS Shield & AWS Firewall Manager
 - Distributed deniel of service (DDoS)
-  - denial of service (DoS)
-  - Distributes deniel of service (DDos)
-  - 
+  - DDoS attack classification
+    - infrastructure layer attacks(基礎設施層攻擊)
+    - application layer attacks（應用層攻擊）
+  - protection techniques
+    - reduce attack surface area (設置security group and ACLs)
+    - plan and scale (暫時性增加實體層)
+    - 了解正常流量及非正常流量
+    - 使用WAF(web application firewall)
 - AWS shield
+  - AWS shield standard(free)
+    - 網路活動監控, DDoS protection, CloudFront and Route 53 availability protection
+  - AWS shield advanced
+    - 更多的保護：UDP reflection, SYN flood, DNS query flood and HTTP flood
+    - AWS DDoS Response Team(DRT) 搜集response的資訊，統計
+    - cost protection (for DDos scaling charges)
 - WAF
 - AWS firewall manager
 - panetration test
