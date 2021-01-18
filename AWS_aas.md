@@ -418,6 +418,7 @@ EFS share, EFS mount points
   - 測試來源(IP 或 DNS 位置); 目的 (EC2、ELB、CloudFront … etc)
 
 ### CloudFormation
+一個以設定檔來整合完整服務的東西（像docker-compose）
 
 ### Lab Session -CloudFormation
 - 不要輕易刪除cloudformation, 會刪除所有設定
