@@ -412,7 +412,7 @@ EFS share, EFS mount points
   - 中央安全管理服務
   - 管理跨帳號及跨服務的AWS rules
   - 快速針對性地應對威脅
-- panetration test
+- panetration test(PT, 滲透測試)
   - 用來確認使用者的服務沒有明顯漏洞
   - 要由root account 向AWS申請測試（通常2-3個工作天會回覆）
   - 測試來源(IP 或 DNS 位置); 目的 (EC2、ELB、CloudFront … etc)
