@@ -405,9 +405,18 @@ EFS share, EFS mount points
     - 更多的保護：UDP reflection, SYN flood, DNS query flood and HTTP flood
     - AWS DDoS Response Team(DRT) 搜集response的資訊，統計
     - cost protection (for DDos scaling charges)
-- WAF
+- WAF(web application firewall)
+  - 不只限制ip, 還可以限制request headers, request body, URI strings ...等, 可自由調整
+  - deploy on: cloudfront, ec2, api gateway and app load balancer
 - AWS firewall manager
+  - 中央安全管理服務
+  - 管理跨帳號及跨服務的AWS rules
+  - 快速針對性地應對威脅
 - panetration test
+  - 用來確認使用者的服務沒有明顯漏洞
+  - 要由root account 向AWS申請測試（通常2-3個工作天會回覆）
+  - 測試來源(IP 或 DNS 位置); 目的 (EC2、ELB、CloudFront … etc)
+
 ### CloudFormation
 ### Lab Session -CloudFormation
 ### Advanced CloudFormation
