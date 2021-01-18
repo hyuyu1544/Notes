@@ -418,6 +418,7 @@ EFS share, EFS mount points
   - 測試來源(IP 或 DNS 位置); 目的 (EC2、ELB、CloudFront … etc)
 
 ### CloudFormation
+
 ### Lab Session -CloudFormation
 ### Advanced CloudFormation
 ### Advanced Lab 1 - Programming and Deployment with CloudFo…
