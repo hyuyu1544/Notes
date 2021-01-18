@@ -420,6 +420,7 @@ EFS share, EFS mount points
 ### CloudFormation
 
 ### Lab Session -CloudFormation
+- 不要輕易刪除cloudformation, 會刪除所有設定
 ### Advanced CloudFormation
 ### Advanced Lab 1 - Programming and Deployment with CloudFo…
 
