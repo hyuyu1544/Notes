@@ -418,7 +418,14 @@ EFS share, EFS mount points
   - 測試來源(IP 或 DNS 位置); 目的 (EC2、ELB、CloudFront … etc)
 
 ### CloudFormation
-一個以設定檔來整合完整服務的東西（像docker-compose）
+- 一個以設定檔來整合完整服務的東西（像docker-compose, 是yaml or json file）, 有版控
+- template structure
+  - json or yaml
+- template sections(設定檔中的元素)
+  - <a href="https://ppt.cc/fTnLgx"><img src="https://ppt.cc/fTnLgx@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
+- stacksets
+- cloudformer
+- cloudformation designer
 
 ### Lab Session -CloudFormation
 - 不要輕易刪除cloudformation, 會刪除所有設定
