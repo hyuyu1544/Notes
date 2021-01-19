@@ -423,14 +423,18 @@ EFS share, EFS mount points
   - json or yaml
 - template sections(設定檔中的元素)
   - <a href="https://ppt.cc/fTnLgx"><img src="https://ppt.cc/fTnLgx@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
+  - resources一定要有
 - stacksets
+  - 可以跨region跟跨帳號建立stack（大型企業可能需要）
 - cloudformer
+  - create a template從已經存在的AWS resource
 - cloudformation designer
+  - 視覺畫的UI, 拖拉圖像, 生成yaml or json file
+  - https://ap-northeast-2.console.aws.amazon.com/cloudformation/designer/
 
 ### Lab Session -CloudFormation
 - 不要輕易刪除cloudformation, 會刪除所有設定
-### Advanced CloudFormation
-### Advanced Lab 1 - Programming and Deployment with CloudFo…
+
 
 
 ## 後記
