@@ -433,7 +433,7 @@ EFS share, EFS mount points
   - https://ap-northeast-2.console.aws.amazon.com/cloudformation/designer/
 
 ### Lab Session -CloudFormation
-- 不要輕易刪除cloudformation, 會刪除所有設定
+- 不要輕易刪除cloudformation, 會刪除所有設定（有點像k8s deployment.yaml的感覺）
 
 
 
