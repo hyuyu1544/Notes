@@ -24,6 +24,12 @@
 			- 可以接多個story
 	- 有多個plugin可以參考
 	
+匹配方式：
+- a.* ->
+- a.** ->
+- {a,b} ->
+- combine ->
+	
 ## issue I meet
 
 ```
