@@ -25,10 +25,10 @@
 	- 有多個plugin可以參考
 	
 匹配方式：
-- a.* ->
-- a.** ->
-- {a,b} ->
-- combine ->
+- a.* -> 匹配`a.b`, `a.c`; 不匹配`a`,`a.b.c`
+- a.** -> 匹配 `a`,`a.b`,`a.b.c`
+- {a,b} -> 匹配 `a`, `b`
+- combine -> a{b,c.**} ...
 	
 ## issue I meet
 
