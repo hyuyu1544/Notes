@@ -35,7 +35,13 @@
     - 先轉移走請求（回給使用者503,而不是讓大家都在這裡等待,佔著資源待久），讓為服務可以快速重啟或安排到前他節點上運作
   - hystrix (netflix使用此架構)
   - ref: https://www.servicemesher.com/blog/istio-circuit-breaking/
+  
 - configuring outlier detection
+配置斷路器, 可以設定由什麼觸發，e.g. 502 or 503 or 504 , 幾秒內幾次這個錯誤，或是幾個請求中幾次這樣的錯誤等
+
+偵測
+
+
 - testing circuit breakers
 
 
