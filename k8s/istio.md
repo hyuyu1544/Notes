@@ -64,8 +64,9 @@
   - 可以在yaml這麼設定：．．．
 
 - Enabling mTLS - it's Automatic
+自動攔截pod之間的http交互,升級成https
 
-
+- STRICT vs PERMISSIVE mTLS
 
 ### note 
 - compare TLS and SSL(secure socket layer) （傳輸層安全性 v.s. 安全通訊端層）
