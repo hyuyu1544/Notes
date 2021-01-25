@@ -63,6 +63,7 @@
   - 是雙向的TLS 
   - 可以在yaml這麼設定：．．．
 
+- Enabling mTLS - it's Automatic
 
 
 
