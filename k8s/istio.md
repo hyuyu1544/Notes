@@ -39,10 +39,11 @@
 - configuring outlier detection
 配置斷路器, 可以設定由什麼觸發，e.g. 502 or 503 or 504 , 幾秒內幾次這個錯誤，或是幾個請求中幾次這樣的錯誤等
 
-偵測
-
+偵測到錯誤可以漸進式，例如：第一次錯誤，斷路器開始３０秒；第二次６０秒；第三次９０秒．．．（可倍數增長也可指數增長）
+偵測到錯誤可以load balance中刪除pod的時間（看上面那一行）
 
 - testing circuit breakers
+
 
 
 
