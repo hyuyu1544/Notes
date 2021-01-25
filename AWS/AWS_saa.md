@@ -435,6 +435,16 @@ EFS share, EFS mount points
 ### Lab Session -CloudFormation
 - 不要輕易刪除cloudformation, 會刪除所有設定（有點像k8s deployment.yaml的感覺）
 
+## week4
+
+### Simple Workflow Service (SWF) - Core Knowledge
+### AWS Big Data Solutions
+### API Gateway
+### Advanced Lab Session - Creating a REST API
+### Advanced ElasticCache
+### Advanced Amazon Kinesis
+### AWS Serverless Platform
+### Preparing for the AWS Certified Cloud Practitioner Exam
 
 
 ## 後記
