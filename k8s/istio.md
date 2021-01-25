@@ -22,9 +22,32 @@
 
 
 ## circuit breaking
-- cascading failures
+- cascading failures(級聯失敗)
+  - 過去may用過：hystrix
+  - cause of cascading failures: 很多原因像是，pod本身run out of resource, run out of ram, coding problem, environ, TCP on pod ...
+  - 宜中一個問題導致整條chain故障，就稱為級聯故障
+  - 故障了通常要做什麼呢？
+    - 立刻重啟系統並重新運行
+    - debug很花時間（故障片及整個系統, 最初原因可能很難追蹤）
+  - 如何避免這個問題,要設置斷路器
+    - 斷路（circuit breaking）
+    - 斷路器 circuit breaker: 轉移每個網路請求 （e.g: hystrix）
+    - 先轉移走請求（回給使用者503,而不是讓大家都在這裡等待,佔著資源待久），讓為服務可以快速重啟或安排到前他節點上運作
+  - hystrix (netflix使用此架構)
+  - ref: https://www.servicemesher.com/blog/istio-circuit-breaking/
 - configuring outlier detection
 - testing circuit breakers
+
+
+
+
+
+
+
+
+
+
+
 
 
 
