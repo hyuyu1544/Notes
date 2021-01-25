@@ -47,8 +47,21 @@
 
 
 ## mutual TLS（Transport Layer Security）
-
-
+- Why is encryption needed inside a cluster?
+  - 兩個服務之間的對話要被加密，走https(事實上，是客戶端像server請求的協議)
+  - 走完https, tls就要上場囉(https可防止men in the middle攻擊) 
+  - 群集的安全性
+    - pod之間的交流並未加密
+    - 部署可能會在使用者自己架設的多台實體機上
+    - 或是部署到ＡＷＳ上，不同的可用區
+    - 只要離開node,就很有可能被攔截攻擊(men in the middle)
+    - 建議cluster內部的交流都用https
+    
+- How Istio can upgrade traffic to TLS?
+  - 作者認為要把所有交流升級成https有困難，因此提供其他的解決方案
+  - istio的中控間有個citadel，可以幫助你做到這件事（讓獨立的pod不再是獨立的pod）
+  - 是雙向的TLS 
+  - 可以在yaml這麼設定：．．．
 
 
 
@@ -56,6 +69,6 @@
 ### note 
 - compare TLS and SSL(secure socket layer) （傳輸層安全性 v.s. 安全通訊端層）
   - SSL protocol got to version 3.0; TLS 1.0 is SSL 3.1 
-
+- PCI 認證 (以便您可以處理信用卡數據)
 
 
