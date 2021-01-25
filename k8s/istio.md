@@ -44,7 +44,7 @@
 
 - testing circuit breakers
 
-
+ - 有人可以分享hystrix的使用經驗？
 
 
 
