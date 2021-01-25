@@ -438,6 +438,23 @@ EFS share, EFS mount points
 ## week4
 
 ### Simple Workflow Service (SWF) - Core Knowledge
+  - 協調跨分散式應用元件的工作
+  - 適合複雜的業務流程及應用程式流程
+  - 適合 long-running execution, 不適合batch processes
+  - 可以跨平台工作（ＡＷＳ and 你的實體機器）
+  - SWF features:
+    - task 不會重複執行
+    - routing and queueing of tasks
+    - timeout and execution status
+    - workflows can have child workflows
+    - user data input and execution results output
+  - SWF components:
+    - workflow: 控制執行任務的流程邏輯
+    - domain: contains a workflow and workflows
+    - tasks: 可以執行可執行程式碼來執行,它們可以是Web服務呼叫或他們甚至可以是一個終端用戶輸入,他們可以並行或serially執行所以它們形成了工作流程的基礎
+    - actors: 會直接與SWF互動,以協調工作
+      - starters: initiate execution of a workflow
+      - deciders: 
 ### AWS Big Data Solutions
 ### API Gateway
 ### Advanced Lab Session - Creating a REST API
