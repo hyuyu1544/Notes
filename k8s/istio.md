@@ -59,12 +59,12 @@
     
 - How Istio can upgrade traffic to TLS?
   - 作者認為要把所有交流升級成https有困難，因此提供其他的解決方案
-  - istio的中控間有個citadel，可以幫助你做到這件事（讓獨立的pod不再是獨立的pod）
+  - istio的中控（istiod）間有個citadel，可以幫助你做到這件事（讓獨立的pod不再是獨立的pod）
   - 是雙向的TLS 
   - 可以在yaml這麼設定：．．．
 
 - Enabling mTLS - it's Automatic
-自動攔截pod之間的http交互,升級成https
+istio會自動攔截pod之間的http交互,升級成https
 
 - STRICT vs PERMISSIVE mTLS
 
