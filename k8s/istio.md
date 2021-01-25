@@ -43,19 +43,19 @@
 偵測到錯誤可以load balance中刪除pod的時間（看上面那一行）
 
 - testing circuit breakers
-
  - 有人可以分享hystrix的使用經驗？
 
 
+## mutual TLS（Transport Layer Security）
 
 
 
 
 
 
+### note 
+- compare TLS and SSL(secure socket layer) （傳輸層安全性 v.s. 安全通訊端層）
+  - SSL protocol got to version 3.0; TLS 1.0 is SSL 3.1 
 
 
 
-
-
-## mutual TLS
