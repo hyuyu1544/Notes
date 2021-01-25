@@ -64,12 +64,14 @@
   - 可以在yaml這麼設定：．．．
 
 - Enabling mTLS - it's Automatic
-istio會自動攔截pod之間的http交互,升級成https
-不用設定yaml file
+  - istio會自動攔截pod之間的http交互,升級成https
+  - 不用設定yaml file
 
 - STRICT vs PERMISSIVE mTLS
- - 如果發送請求的pod沒有用proxy, istio無法自動升級請求到https
- - 默認permissive mode, 加幾行code在yaml, 變成strict mode
+  - 如果發送請求的pod沒有用proxy, istio無法自動升級請求到https
+  - 默認permissive mode(寬鬆模式), 加幾行code在yaml, 變成strict mode（嚴格模式）
+  - 寬鬆模式：可以通過http請求（then 自動升級成https?）
+  - 嚴格模式：會拒絕http請求
 
 ### note 
 - compare TLS and SSL(secure socket layer) （傳輸層安全性 v.s. 安全通訊端層）
