@@ -1,4 +1,4 @@
-## fault injection
+## Fault Injection
 - why important?
   - 因為分佈式系統的network不是100% reliability, 所以要有容錯能力, so you have to have fault tolerance
 ```
@@ -17,7 +17,7 @@ spec:
 
 
 
-## circuit breaking
+## Circuit Breaking
 - cascading failures(級聯失敗)
   - 過去may用過：hystrix
   - cause of cascading failures: 很多原因像是，pod本身run out of resource, run out of ram, coding problem, environ, TCP on pod ...
@@ -42,7 +42,7 @@ spec:
  - 有人可以分享hystrix的使用經驗？
 
 
-## mutual TLS（Transport Layer Security）
+## Mutual TLS（Transport Layer Security）
 - Why is encryption needed inside a cluster?
   - 兩個服務之間的對話要被加密，走https(事實上，是客戶端像server請求的協議)
   - 走完https, tls就要上場囉(https可防止men in the middle攻擊) 
@@ -73,6 +73,7 @@ spec:
   mtls:
     mode: STRICT/PERMISSIVE
 ```
+
 
 ### note & reference
 - fallacies of distributed computing (https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)
