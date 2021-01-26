@@ -1,16 +1,6 @@
 ## fault injection
 - why important?
-  - 因為network不是100% reliability, 所以要有容錯能力
-  - 分佈式系統不可能100％ reliabe, so you have to have fault tolerance.
-  - search: fallacies of distributed computing (https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)
-  - 把錯誤引進architecture in kiali：
-    - 刪掉gateway
-    - delete metadata
-  - chaos engineering : 一個由netflix做的問題製造機，可以製造問題進到你的程式？！
-  (https://en.wikipedia.org/wiki/Chaos_engineering#:~:text=Chaos%20engineering%20is%20the%20discipline,withstand%20turbulent%20and%20unexpected%20conditions)
-  
-  - architecture in kiali
-  - 延遲和故障引入微服務架構 (demo is fail???)(他覺得netflix這一塊（？）做得很好)
+  - 因為分佈式系統的network不是100% reliability, 所以要有容錯能力, so you have to have fault tolerance
 ```
 spec:
   hosts:
@@ -23,14 +13,8 @@ spec:
           value: 100
 ...
 ```
-```  
-- why do that?
-  - because network is not 100% reliable: 對分布式系統的錯誤認知：
-    1. network is reliable
-    2. ...
-  - 可以在yaml 這樣寫：fault: delay: value: fixedDelay ...
-  - 也可以引用別人的服務： chaos engineering
-```
+  - 可以引用別人的服務驗證（延遲和故障引入微服務架構）： chaos engineering
+
 
 
 ## circuit breaking
@@ -84,8 +68,16 @@ spec:
   - 默認permissive mode(寬鬆模式), 加幾行code在yaml, 變成strict mode（嚴格模式）
   - 寬鬆模式：可以通過http請求（then 自動升級成https?）
   - 嚴格模式：會拒絕http請求
+```
+spec:
+  mtls:
+    mode: STRICT/PERMISSIVE
+```
 
-### note 
+### note & reference
+- fallacies of distributed computing (https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)
+- chaos engineering : 一個由netflix做的問題製造機，可以製造問題進到你的程式？！
+  (https://en.wikipedia.org/wiki/Chaos_engineering#:~:text=Chaos%20engineering%20is%20the%20discipline,withstand%20turbulent%20and%20unexpected%20conditions)
 - compare TLS and SSL(secure socket layer) （傳輸層安全性 v.s. 安全通訊端層）
   - SSL protocol got to version 3.0; TLS 1.0 is SSL 3.1 
 - PCI 認證 (以便您可以處理信用卡數據)
