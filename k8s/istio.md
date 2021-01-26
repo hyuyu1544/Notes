@@ -19,18 +19,16 @@ spec:
 
 ## Circuit Breaking
 - cascading failures(級聯失敗)
-  - 過去may用過：hystrix
-  - cause of cascading failures: 很多原因像是，pod本身run out of resource, run out of ram, coding problem, environ, TCP on pod ...
-  - 宜中一個問題導致整條chain故障，就稱為級聯故障
+  - cause of cascading failures: pod本身run out of resource, run out of ram, coding problem, environ, TCP on pod ...
+  - 其中一個問題導致整條chain故障，就稱為級聯故障
   - 故障了通常要做什麼呢？
     - 立刻重啟系統並重新運行
     - debug很花時間（故障片及整個系統, 最初原因可能很難追蹤）
-  - 如何避免這個問題,要設置斷路器
+  - 如何避免這個問題？設置斷路器
     - 斷路（circuit breaking）
     - 斷路器 circuit breaker: 轉移每個網路請求 （e.g: hystrix）
     - 先轉移走請求（回給使用者503,而不是讓大家都在這裡等待,佔著資源待久），讓為服務可以快速重啟或安排到前他節點上運作
   - hystrix (netflix使用此架構)
-  - ref: https://www.servicemesher.com/blog/istio-circuit-breaking/
   
 - configuring outlier detection
   - 配置斷路器, 可以設定由什麼觸發，e.g. 502 or 503 or 504 , 幾秒內幾次這個錯誤，或是幾個請求中幾次這樣的錯誤等
@@ -79,6 +77,7 @@ spec:
 - fallacies of distributed computing (https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)
 - chaos engineering : 一個由netflix做的問題製造機，可以製造問題進到你的程式？！
   (https://en.wikipedia.org/wiki/Chaos_engineering#:~:text=Chaos%20engineering%20is%20the%20discipline,withstand%20turbulent%20and%20unexpected%20conditions)
+- circuit breaking: https://www.servicemesher.com/blog/istio-circuit-breaking/
 - compare TLS and SSL(secure socket layer) （傳輸層安全性 v.s. 安全通訊端層）
   - SSL protocol got to version 3.0; TLS 1.0 is SSL 3.1 
 - PCI 認證 (以便您可以處理信用卡數據)
