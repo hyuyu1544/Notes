@@ -11,6 +11,18 @@
   
   - architecture in kiali
   - 延遲和故障引入微服務架構 (demo is fail???)(他覺得netflix這一塊（？）做得很好)
+```
+spec:
+  hosts:
+  - ratings
+  http:
+  - fault:
+      delay:
+        fixedDelay: 7s
+        percentage:
+          value: 100
+...
+```
 ```  
 - why do that?
   - because network is not 100% reliable: 對分布式系統的錯誤認知：
