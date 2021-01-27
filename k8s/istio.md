@@ -14,7 +14,7 @@ spec:
           value: 100
 ...
 ```
-  - 可以引用別人的服務驗證（延遲和故障引入微服務架構）： chaos engineering
+  - 可以引用別人的服務驗證（將延遲和故障引入微服務架構）： chaos engineering
 
 
 ## Circuit Breaking
