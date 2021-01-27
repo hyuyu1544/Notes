@@ -2,6 +2,7 @@
 - why important?
   - 因為分佈式系統的network不是100% reliability, 所以要有容錯能力, so you have to have fault tolerance
 ```
+...
 spec:
   hosts:
   - ratings
@@ -16,10 +17,9 @@ spec:
   - 可以引用別人的服務驗證（延遲和故障引入微服務架構）： chaos engineering
 
 
-
 ## Circuit Breaking
 - cascading failures(級聯失敗)
-  - cause of cascading failures: pod本身run out of resource, run out of ram, coding problem, environ, TCP on pod ...
+  - cause of cascading failures: pod本身run out of resource, run out of ram, coding problem, environment ...
   - 其中一個問題導致整條chain故障，就稱為級聯故障
   - 故障了通常要做什麼呢？
     - 立刻重啟系統並重新運行
@@ -27,17 +27,25 @@ spec:
   - 如何避免這個問題？設置斷路器
     - 斷路（circuit breaking）
     - 斷路器 circuit breaker: 轉移每個網路請求 （e.g: hystrix）
-    - 先轉移走請求（回給使用者503,而不是讓大家都在這裡等待,佔著資源待久），讓為服務可以快速重啟或安排到前他節點上運作
+    - 先轉移走請求（回給使用者503,而不是讓大家都在這裡等待,佔著資源），讓為服務可以快速重啟或安排到其它節點上運作
   - hystrix (netflix使用此架構)
   
 - configuring outlier detection
   - 配置斷路器, 可以設定由什麼觸發，e.g. 502 or 503 or 504 , 幾秒內幾次這個錯誤，或是幾個請求中幾次這樣的錯誤等
+  - 偵測到錯誤的方式可以漸進式，例如：第一次錯誤，斷路器開始３０秒；第二次６０秒；第三次９０秒．．．（可倍數增長也可指數增長）
 
-  - 偵測到錯誤可以漸進式，例如：第一次錯誤，斷路器開始３０秒；第二次６０秒；第三次９０秒．．．（可倍數增長也可指數增長）
-  - 偵測到錯誤可以load balance中刪除pod的時間（看上面那一行）
-
-- testing circuit breakers
- - 有人可以分享hystrix的使用經驗？
+```
+...
+spec:
+  host: httpbin
+  trafficPolicy:
+    outlierDetection:
+      baseEjectionTime: 3m
+      consecutiveErrors: 1
+      interval: 1s
+      maxEjectionPercent: 100
+...
+```
 
 
 ## Mutual TLS（Transport Layer Security）
@@ -55,7 +63,13 @@ spec:
   - 作者認為要把所有交流升級成https有困難，因此提供其他的解決方案
   - istio的中控（istiod）間有個citadel，可以幫助你做到這件事（讓獨立的pod不再是獨立的pod）
   - 是雙向的TLS 
-  - 可以在yaml這麼設定：．．．
+```
+...
+spec:
+  mtls:
+    mode: STRICT/PERMISSIVE
+...
+```
 
 - Enabling mTLS - it's Automatic
   - istio會自動攔截pod之間的http交互,升級成https
@@ -66,11 +80,7 @@ spec:
   - 默認permissive mode(寬鬆模式), 加幾行code在yaml, 變成strict mode（嚴格模式）
   - 寬鬆模式：可以通過http請求（then 自動升級成https?）
   - 嚴格模式：會拒絕http請求
-```
-spec:
-  mtls:
-    mode: STRICT/PERMISSIVE
-```
+
 
 
 ### note & reference
