@@ -84,9 +84,9 @@ spec:
 
 
 ### note & reference
-- fallacies of distributed computing (https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)
-- chaos engineering : 一個由netflix做的問題製造機，可以製造問題進到你的程式？！
-  (https://en.wikipedia.org/wiki/Chaos_engineering#:~:text=Chaos%20engineering%20is%20the%20discipline,withstand%20turbulent%20and%20unexpected%20conditions)
+- fallacies of distributed computing: https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing
+- chaos engineering :(製造問題進到程式)
+  https://en.wikipedia.org/wiki/Chaos_engineering#:~:text=Chaos%20engineering%20is%20the%20discipline,withstand%20turbulent%20and%20unexpected%20conditions
 - circuit breaking: https://www.servicemesher.com/blog/istio-circuit-breaking/
 - Istio Destination Rule: https://istio.io/latest/docs/reference/config/networking/destination-rule/
 - hystrix: https://www.exoscale.com/syslog/istio-vs-hystrix-circuit-breaker/
