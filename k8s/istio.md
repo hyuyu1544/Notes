@@ -1,6 +1,6 @@
 ## Fault Injection
 - why important?
-  - 因為分佈式系統的network不是100% reliability, 所以要有容錯能力, so you have to have fault tolerance
+  - 因為分佈式系統的network不是100% reliability, 所以要有容錯能力(so you have to have fault tolerance)
 ```
 ...
 spec:
