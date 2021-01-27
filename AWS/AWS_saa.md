@@ -454,7 +454,9 @@ EFS share, EFS mount points
     - tasks: 可以執行可執行程式碼來執行,它們可以是Web服務呼叫或他們甚至可以是一個終端用戶輸入,他們可以並行或serially執行所以它們形成了工作流程的基礎
     - actors: 會直接與SWF互動,以協調工作
       - starters: initiate execution of a workflow
-      - deciders: 
+      - deciders: implement workflow logic
+  - SWF tasks:
+  
 ### AWS Big Data Solutions
 ### API Gateway
 ### Advanced Lab Session - Creating a REST API
