@@ -32,10 +32,12 @@
 	
 ## issue I meet
 
+1. no patterns matched
 ```
 2021-01-21 11:01:20 +0000 [warn]: no patterns matched tag="kubernetes.....var.log.containers....-86f78646d9-pnplz_...-c158bda01f672a39bedb5a09aa76c3c14920bb08092797ea5bc4e749a24fb7e9.log"
 2021-01-21 11:01:20 +0000 [warn]: no patterns matched tag="kubernetes....var.log.containers....-5889b4974f-6j687_...-736cb17924d81d05bc01860d7aebee6b19b2dcc4dfae39747f2be3595986c16e.log"
 ```
+解：下面的match pattern 沒有跟上面給的tag match到
 
 ## Reference
 - https://www.itread01.com/content/1549792272.html
