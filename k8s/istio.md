@@ -37,7 +37,6 @@ spec:
 ```
 ...
 spec:
-  host: httpbin
   trafficPolicy:
     outlierDetection:
       baseEjectionTime: 3m
