@@ -503,7 +503,14 @@ EFS share, EFS mount points
     - not suitable: long-term data storage and analytics
 
 ### API Gateway
+  - serverless
+  - a `front door` for get data, business logic ...
+
 ### AWS Serverless Platform
+- serverless:
+  - 不用煩惱server的相關問題，e.g. load blance, 存在哪, 機台..(都給AWS管)
+  - 只要管你的預算限制即可
+
 ### Preparing for the AWS Certified Cloud Practitioner Exam
 - cloud concepts：雲服務的價值
 - security and compliance
