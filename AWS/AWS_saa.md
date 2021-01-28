@@ -465,6 +465,43 @@ EFS share, EFS mount points
     - can use console or CLI
   
 ### AWS Big Data Solutions
+- go throught 近幾年來AWS提供的big data service
+  - big data services
+    - Database/storage
+      - redshift, s3, RDS, DynamoDB
+    - analysis
+      - EMP, elasticsearch, quicksight bi, lambda, amazon machine learning
+    - real time data
+      - kinesis streams
+    - third party applications
+  - redshift(儲存服務)
+    - petabyte scale
+    - based upon postgreSQL
+    - 提供BI(智能)報告服務
+    - 複製所有node跟cluster之間的資料
+    - 持續備份到s3 with snapshots(held for 1-35 days)
+    - 可快速還原（有snapshots）
+    
+  - elastic map reduce(EMR)
+    - AWS fully managed hadoop service
+    - 任務結束後會自動停止cluster, 並刪除
+    - 不適合用於小數據集, 或 transcation requirment
+  
+  - elasticsearch
+    - analyze data from: s3, kinesis stream, cloudwatch log, cloudtrail api call logs
+    - suitable: query and search large amounts of data 
+    - not suitable: online transaction processing, petabyte storage
+    
+  - quicksight(BI reporting service)
+    
+  - machine learning
+    - data source: s3, RDS, redshift
+    - suitable: 分析個人行為, 預測個人行為, 預測產品需求, 標記可疑transaction
+    - not suitable: learning skill, 超大的data set
+  - kinesis(預測性分析)
+    - suitable: real-time analyze
+    - not suitable: long-term data storage and analytics
+
 ### API Gateway
 ### AWS Serverless Platform
 ### Preparing for the AWS Certified Cloud Practitioner Exam
