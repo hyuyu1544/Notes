@@ -437,7 +437,7 @@ EFS share, EFS mount points
 
 ## week4
 
-### Simple Workflow Service (SWF) - Core Knowledge
+### Simple Workflow Service (SWF) - Core Knowledge(狀態追蹤器和任務協調器)
   - 協調跨分散式應用元件的工作
   - 適合複雜的業務流程及應用程式流程
   - 適合 long-running execution, 不適合batch processes
@@ -456,14 +456,23 @@ EFS share, EFS mount points
       - starters: initiate execution of a workflow
       - deciders: implement workflow logic
   - SWF tasks:
+    - queue, queues
+    - 可以指定worker (需要有 task routing)
+  - SWF implementation:
+    - SDKs
+    - SWF API HTTP POST calls
+    - flow framework(JAVA or Ruby)
+    - can use console or CLI
   
 ### AWS Big Data Solutions
 ### API Gateway
-### Advanced Lab Session - Creating a REST API
-### Advanced ElasticCache
-### Advanced Amazon Kinesis
 ### AWS Serverless Platform
 ### Preparing for the AWS Certified Cloud Practitioner Exam
+- cloud concepts：雲服務的價值
+- security and compliance
+- technology
+- billing and pricing: 如何降低成本
+- resources
 
 
 ## 後記
