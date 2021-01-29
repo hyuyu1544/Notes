@@ -13,3 +13,9 @@
 11. Event-Driven Batch Processing
 12. Coordinated Batch Processing
 13. Conclusion: A New Beginning?
+
+
+
+
+## reference
+1. https://rickhw.github.io/2019/05/17/About/DDS-zh_TW/
