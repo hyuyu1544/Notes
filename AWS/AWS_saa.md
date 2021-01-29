@@ -512,11 +512,35 @@ EFS share, EFS mount points
   - 只要管你的預算限制即可
 
 ### Preparing for the AWS Certified Cloud Practitioner Exam
-- cloud concepts：雲服務的價值
+- cloud concepts
+  - six advantages:
+    - trade capital expense for variable expense
+    - benefit from massive economies of scale
+    - stop guessing capacity 
+    - increase speed and agility
+    - stop maintaining and spend money running data centers
+    - go global in minutes 
+  - TCO(Total cost of ownership)
+  - pricing calculator
+  - design principes
+    - design for failure(multi-AZ, multi-region)
+    - elasticity(autoscaling)
+    - loose coupling(SQS)
 - security and compliance
+  - AWS: security of the cloud
+  - customers: security in the cloud (e.g. encryption your data...)
+  - VPC, VPN, AWS shield, WAF, cloudfront
+  - IAM, grant least privilege access
+  - amazon inspector, AWS trusted advisor, AWS report abuse
 - technology
-- billing and pricing: 如何降低成本
-- resources
+  - global v.s regional services(s3,cloudfront, route53)
+  - ec2, s3, ELB, cloudwatch
+  - database: relational v.s. NoSQL, serverless
+- billing and pricing
+  - AWS organisations
+    - multiple accounts
+    - consolidated billing
+    - access management
 
 
 ## 後記
