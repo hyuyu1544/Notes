@@ -1,7 +1,14 @@
 # dojo - s3
 
 ## 加密
-
+- client-side:
+    - Use an AWS KMS-managed customer master key.
+    - Use a client-side master key.
+- server-side:
+    - Use Server-Side Encryption with Amazon S3-Managed Keys (SSE-S3)
+    - Use Server-Side Encryption with AWS KMS-Managed Keys (SSE-KMS)
+    - Use Server-Side Encryption with Customer-Provided Keys (SSE-C)
+    
 ## 性能(搭配應用情境）
 
 ## 備份
