@@ -1,6 +1,10 @@
 # dojo - s3
 
-## 加密,性能(搭配應用情境）
+## 加密
+
+## 性能(搭配應用情境）
+
+## 備份
 
 
 1. S3 encryption technique:(Client-side encryption)
