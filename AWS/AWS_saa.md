@@ -453,8 +453,9 @@ EFS share, EFS mount points
     - domain: contains a workflow and workflows
     - tasks: 可以執行可執行程式碼來執行,它們可以是Web服務呼叫或他們甚至可以是一個終端用戶輸入,他們可以並行或serially執行所以它們形成了工作流程的基礎
     - actors: 會直接與SWF互動,以協調工作
-      - starters: initiate execution of a workflow
-      - deciders: implement workflow logic
+      - starters: initiate execution of a workflow(啟動job的)
+      - deciders: implement workflow logic(控制下一步要幹嘛，決定是成功還是失敗)
+      - Activity Workers: 執行Task
   - SWF tasks:
     - queue, queues
     - 可以指定worker (需要有 task routing)
@@ -463,6 +464,12 @@ EFS share, EFS mount points
     - SWF API HTTP POST calls
     - flow framework(JAVA or Ruby)
     - can use console or CLI
+  - mech note:
+    - workflow executions
+    - 提供Task-Oriented API
+      - SQS 是Message-Oriented API
+    - 可以存放到1 year
+    - 會確保assigned task不會重複執行
   
 ### AWS Big Data Solutions
 - go throught 近幾年來AWS提供的big data service
@@ -470,7 +477,7 @@ EFS share, EFS mount points
     - Database/storage
       - redshift, s3, RDS, DynamoDB
     - analysis
-      - EMP, elasticsearch, quicksight bi, lambda, amazon machine learning
+      - EMR, elasticsearch, quicksight bi, lambda, amazon machine learning
     - real time data
       - kinesis streams
     - third party applications
