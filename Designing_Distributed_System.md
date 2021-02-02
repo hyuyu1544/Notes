@@ -19,3 +19,5 @@
 
 ## reference
 1. https://rickhw.github.io/2019/05/17/About/DDS-zh_TW/
+2. https://www.infoq.com/presentations/distributed-systems-complexity-human-factor/
+
