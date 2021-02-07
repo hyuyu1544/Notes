@@ -66,4 +66,4 @@ There is a vCPU-based On-Demand Instance limit per region which is why subsequen
   
 # ref
 https://ithelp.ithome.com.tw/articles/10192098
-
+https://aws.amazon.com/ec2/faqs/
