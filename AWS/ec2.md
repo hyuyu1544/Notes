@@ -1,32 +1,4 @@
-# dojo - ec2
-
-## multi-type instance
-
-###
-1. an Auto Scaling group of Amazon EC2 instances
-```
-Amazon S3或Amazon EFS。兩種服務都有生命週期配置
-```  
-2. EBS-backed EC2 instance which uses Simple Workflow Service (SWF) to handle its sequential background jobs
-```
-You can use a combination of EC2 and SWF for the following scenarios:
-
-Managing a multi-step and multi-decision checkout process of an e-commerce mobile app.
-Orchestrating the execution of distributed business processes
-```
-
-3. globally to upload and store several types of files,  old files yet still provide durability and high availability.
-```
-Use Amazon S3 and create a lifecycle policy that will move the objects to Amazon S3 Glacier after 2 years.
-Use Amazon S3 and create a lifecycle policy that will move the objects to Amazon S3 Standard-IA after 2 years.
-```
-
-4. EC2 instances in your VPC, trigger the Amazon EC2 API to request 50 EC2 instances in a single Availability Zone.
-```
-There is a vCPU-based On-Demand Instance limit per region which is why subsequent requests failed. Just submit the limit increase form to AWS and retry the failed requests once approved
-```
-
-
+# ec2
  
  ## note by FQA
  
@@ -54,7 +26,7 @@ There is a vCPU-based On-Demand Instance limit per region which is why subsequen
 ### Instance Types
 - https://www.evernote.com/shard/s201/client/snv?noteGuid=c4deb1da-8a0b-4dcc-ad19-201c4bbb7085&noteKey=de2bc90c858d8333&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs201%2Fsh%2Fc4deb1da-8a0b-4dcc-ad19-201c4bbb7085%2Fde2bc90c858d8333&title=AWS%2B-%2BEC2
 - https://ithelp.ithome.com.tw/articles/10192098
-
+-
 ### Storage
  - 在EBS-backed instance，預設行為是Instance terminated時，root EBS也會被刪掉，但可以透過設定讓他們的lifecycle獨立，讓EBS不會自動刪除
  - Snapshots備份到S3是Incrementally
@@ -62,7 +34,20 @@ There is a vCPU-based On-Demand Instance limit per region which is why subsequen
  - EBS always be in the same availability zone as the EC2 instance
  - Snapshot可以encrypted，如果是從encrypted volume create/restore的snapshot，都會是encrypted
  - Snapshot可以share，但只有unencrypted的可以share
+ 
+### Placement Groups
+ - 要確保EC2 Instance之間的網路效率時，只放在同一個AZ是不足夠的：要在同一個Cluster Placement Group才是正確做法
 
+##### Spread Placement Groups(降低故障風險)
+ - 可降低實例共享同一機架時可能發生的同時發生故障的風險
+ - 只有特定的Zone有支援，一個Zone只能放最多7台SPG Instance
+ - 可以跨AZ部署
+##### Cluster Placement Group(效能)
+ - 將實例打包在一起放在可用區中。該策略使工作負載能夠實現HPC應用程序中典型的緊密耦合的節點到節點通信所需的低延遲網絡性能
+ - 不能跨AZ部署
+##### Partition Placement Group（大型分佈式）
+ - 將您的實例分佈在邏輯分區上，這樣一個分區中的實例組就不會與不同分區中的實例組共享基礎硬件。大型分佈式和復制工作負載（例如Hadoop，Cassandra和Kafka）通常使用此策略
+ - 可以跨AZ部署
   
 # ref
 https://ithelp.ithome.com.tw/articles/10192098
