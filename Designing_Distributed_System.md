@@ -1,11 +1,11 @@
 # Designing Distributed System
 
 ## Introduction 
+- 服務的成長快速，建制客製化的分布式系統
 - 容器化 
   - 容器化是一個實現分佈式的高效的方法
   - 容器化設置了一個天然的邊界，邊界之外用接口進行通信
   - 任何意料之外的情況都可以被限制在最小的影響範圍
-
 
 ## single node patterns
 - 構成分散式系統模式的最小單位（Atomic elements）
