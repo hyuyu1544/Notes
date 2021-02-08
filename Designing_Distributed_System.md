@@ -1,6 +1,9 @@
 # Designing_Distributed_System
 
 ## Introduction 
+- 容器化: 容器化是一個實現分佈式的高效的方法
+- 容器化設置了一個天然的邊界，邊界之外用接口進行通信
+- 任何意料之外的情況都可以被限制在最小的影響範圍
 
 
 ## single node patterns
@@ -26,7 +29,18 @@
     - Documenting Your Containers: 撰寫容器的文件
 
 ### Ambassadors
+
+<a href="https://ppt.cc/fTse8x"><img src="https://ppt.cc/fTse8x@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
+
+- concept: 代替應用程式容器與其他世界的服務做互動
+- 主要用在分流（load balance, 請求分流）
+
 ### Adapter
+
+<a href="https://ppt.cc/fSLnex"><img src="https://ppt.cc/fSLnex@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
+
+- concept: 修改應用程式容器介面
+- 主要用在監控（log收集）
 
 
 
@@ -35,4 +49,5 @@
 1. https://rickhw.github.io/2019/05/17/About/DDS-zh_TW/
 2. https://www.infoq.com/presentations/distributed-systems-complexity-human-factor/
 3. https://tachingchen.com/tw/blog/desigining-distributed-systems-the-sidecar-pattern-concept/
+4. https://segmentfault.com/a/1190000019600110
 
