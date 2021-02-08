@@ -1,9 +1,18 @@
 # Designing_Distributed_System
 
-1. Introduction 
-2. The Sidecar Pattern
-3. Ambassadors
-4. Adapter
+## Introduction 
+
+## single node patterns
+
+### The Sidecar Pattern
+適當的將主應用功能與新功能進行解耦，便能`提高重用性`與`降低複雜度`。
+
+<a href="https://ppt.cc/ft3Iqx"><img src="https://ppt.cc/ft3Iqx@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
+
+- 透過其他容器來「增添、擴展」主要容器的功能性
+
+### Ambassadors
+### Adapter
 5. Replicated Load-Balanced Services
 6. Sharded Services
 7. Scatter/Gather
