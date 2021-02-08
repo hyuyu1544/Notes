@@ -24,7 +24,7 @@
   - 而 Dedicated Hosts 也可以搭配 Reserved Instances 購買並預付較長期的合約換取更佳的價格折扣。
   
 ### Instance Types
-- https://www.evernote.com/shard/s201/client/snv?noteGuid=c4deb1da-8a0b-4dcc-ad19-201c4bbb7085&noteKey=de2bc90c858d8333&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs201%2Fsh%2Fc4deb1da-8a0b-4dcc-ad19-201c4bbb7085%2Fde2bc90c858d8333&title=AWS%2B-%2BEC2
+https://ppt.cc/ftKDHx
 
 ### Storage
  - 在EBS-backed instance，預設行為是Instance terminated時，root EBS也會被刪掉，但可以透過設定讓他們的lifecycle獨立，讓EBS不會自動刪除
