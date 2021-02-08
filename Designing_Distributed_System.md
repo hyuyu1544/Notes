@@ -2,14 +2,16 @@
 
 ## Introduction 
 
+
 ## single node patterns
+- 構成分散式系統模式的最小單位（Atomic elements）
 
 ### The Sidecar Pattern
-適當的將主應用功能與新功能進行解耦，便能`提高重用性`與`降低複雜度`。
 
 <a href="https://ppt.cc/flBFEx"><img src="https://ppt.cc/flBFEx@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
 
 - concept: 透過其他容器來「增添、擴展」主要容器的功能性
+- 適當的將主應用功能與新功能進行解耦，便能`提高重用性`與`降低複雜度`
 - Application Container: 負責主要業務邏輯之容器
   - Codebase 龐大且難以增加新功能
   - 可以移植進容器但已無人維護的 Legacy 服務
