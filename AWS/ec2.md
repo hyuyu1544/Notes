@@ -24,7 +24,7 @@
   - 而 Dedicated Hosts 也可以搭配 Reserved Instances 購買並預付較長期的合約換取更佳的價格折扣。
   
 ### Instance Types
-https://ppt.cc/ftKDHx
+<a href="https://ppt.cc/ftKDHx"><img src="https://ppt.cc/ftKDHx@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
 
 ### Storage
  - 在EBS-backed instance，預設行為是Instance terminated時，root EBS也會被刪掉，但可以透過設定讓他們的lifecycle獨立，讓EBS不會自動刪除
