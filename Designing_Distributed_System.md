@@ -33,23 +33,20 @@
 <a href="https://ppt.cc/fTse8x"><img src="https://ppt.cc/fTse8x@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
 
 - concept: 代替應用程式容器與其他世界的服務做互動(通訊代理)
-- 熔斷，路由，流量監控，安全控制
+- 可以對容器做熔斷、流量監控、安全控制
 - 常見應用：
-  - 分流（load balance, 請求分流）
-  - 分片
-  - 服務仲介
+  - 分流（load balance, 請求分流, 實驗分流）
+  - 分片（sharding）
 
 ### Adapter
 
 <a href="https://ppt.cc/fSLnex"><img src="https://ppt.cc/fSLnex@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
 
 - concept: 修改應用程式容器介面
-- 最典型的例子應該就是容器管理平台，所有系統中的容器都會有一套統一的監控接口
-- 現在的容器多種多樣，不過只要保證每個容器都有統一的不變的對外監控接口，對於單獨的監控工具來說就不難實時收集各個容器的數據了
+- 讓不同的容器有通用介面（統一的監控接口）
 - 常見應用：
   - 監控
   - logging(fluentd)
-  - 健康檢查監控
 
 
 
