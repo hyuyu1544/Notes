@@ -28,3 +28,15 @@ Scheduled Scaling: based on a schedule(predictable load changes), not dynamic sc
 2.Its default value is 300 seconds.
 3.It is a configurable setting for your Auto Scaling group.
 ```
+
+
+# help
+```
+Category: CSAA – Design High-Performing Architectures
+An application is hosted in an Auto Scaling group of EC2 instances. To improve the monitoring process, you have to configure the current capacity to increase or decrease based on a set of scaling adjustments. This should be done by specifying the scaling metrics and threshold values for the CloudWatch alarms that trigger the scaling process.
+
+Which of the following is the most suitable type of scaling policy that you should use?
+```
+```
+Step scaling
+```
