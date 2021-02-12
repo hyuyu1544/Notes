@@ -54,11 +54,14 @@ It automatically moves data to the most cost-effective access tier without any o
 Ideal to use for data archiving.
 (o)It is designed for data that requires rapid access when needed.
 
-# ref
-https://chtseng.wordpress.com/2015/05/18/amazon-aws-s3-glacier-and-cloudfront/
+
 It provides high latency and low throughput performance.
 
 
 Amazon S3 Standard – Infrequent Access (Standard – IA)
   - high durability, throughput, and low latency 
   - ideal for long-term storage, backups, and as a data store for disaster recovery. 
+
+# ref
+https://chtseng.wordpress.com/2015/05/18/amazon-aws-s3-glacier-and-cloudfront/
+https://ithelp.ithome.com.tw/articles/10192077
