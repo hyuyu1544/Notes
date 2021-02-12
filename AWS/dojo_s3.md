@@ -1,4 +1,4 @@
-# dojo - s3
+# s3
 
 ## 加密
 - client-side:
@@ -53,6 +53,9 @@ a:
 It automatically moves data to the most cost-effective access tier without any operational overhead.
 Ideal to use for data archiving.
 (o)It is designed for data that requires rapid access when needed.
+
+# ref
+https://chtseng.wordpress.com/2015/05/18/amazon-aws-s3-glacier-and-cloudfront/
 It provides high latency and low throughput performance.
 
 
