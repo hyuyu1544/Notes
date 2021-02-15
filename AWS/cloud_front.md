@@ -20,8 +20,16 @@ Deny access to anyone that you don’t want to have access using Amazon S3 URLs.
   - You don’t want to change your current URLs.
 ```
 
+3. fix latency issue
+```
+(1)content delivery network (CDN)
+  - read only website: cache is good solution
+```
 
-
+4. Server Name Indication(SNI) and SSL
+```
+SNI自定義SSL依賴於傳輸層安全協議的SNI擴展，該協議允許多個域通過包含查看者試圖連接的主機名，通過同一IP地址為SSL流量提供服務
+```
 
 
 
