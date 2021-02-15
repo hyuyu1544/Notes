@@ -28,30 +28,45 @@
 |------------------------------|-------------------|---------------------------|----------------------------------|-------------------|
 | 一般應用                         | 運算優化(CPU)         | 記憶體優化                     | 加速運算優化(GPU)                      | 儲存優化              |
 | 網頁應用程式伺服器,程式碼儲存槽（repository） | 資料分析、影音處理         | in-memory資料庫、Apache Spark | 影音呈向（rendering）、machine learning | 資料分析或分散式資料庫       |
+| m 系列、t系列 、a系列              | c 系列              | r系列、x系列                   | p系列、g系列、i系列、f系列                  | i系列、d系列、h系列       |
+
 
 
 ### Storage
- - 在EBS-backed instance，預設行為是Instance terminated時，root EBS也會被刪掉，但可以透過設定讓他們的lifecycle獨立，讓EBS不會自動刪除
- - Snapshots備份到S3是Incrementally
- - EBS可以在使用中時改變，type跟size都可以
- - EBS always be in the same availability zone as the EC2 instance
- - Snapshot可以encrypted，如果是從encrypted volume create/restore的snapshot，都會是encrypted
- - Snapshot可以share，但只有unencrypted的可以share
+
 ##### EBS
  - 預設為`終止instance，自動刪除`代號為`N`
+ - 透過設定讓他們的lifecycle獨立，讓EBS不會自動刪除
+ - EBS可以在使用中時改變，type跟size都可以
+ - EBS always be in the same availability zone as the EC2 instance
  - SSD(transactional workloads, 事務處理工作負載) and HDD(throughput intensive workloads, 吞吐量工作負載)
-  - Throughput Optimized HDD (st1): 
-   - frequently accessed, large datasets and large I/O sizes
-   - e.g. MapReduce, Kafka, log processing, data warehouse, and ETL workloads
-  - Cold HDD (sc1): 
-   - lowest cost `per GB` of all EBS volume types
-   - less frequently, large and cold datasets
-  - IOPS SSD (io1 and io2):
-  - General Purpose SSD (gp2 and gp3):
+   - Throughput Optimized HDD (st1): 
+     - frequently accessed, large datasets and large I/O sizes
+     - e.g. MapReduce, Kafka, log processing, data warehouse, and ETL workloads
+   - Cold HDD (sc1): 
+     - lowest cost `per GB` of all EBS volume types
+     - less frequently, large and cold datasets
+   - IOPS SSD (io1 and io2):
+   - General Purpose SSD (gp2 and gp3):
  - `IOPS io1 volume`，在同`AZ`內，可以共用16到`Nitro-based EC2 instances`
  - EBS snapshots:
-  - only available through the Amazon EC2 APIs
-  - 
+   - only available through the Amazon EC2 APIs
+   - 使用snapshots時,可能會移除本地緩存的數據,建議做法：`移除連接`->`snapshots`->`重新連接`
+   - Snapshot可以encrypted，如果是從encrypted volume create/restore的snapshot，都會是encrypted
+   - Snapshot可以share，但只有unencrypted的可以share
+   - Snapshots備份到S3是Incrementally(增加上去,不會覆蓋)
+##### EFS
+ - 用DNS掛載到instance(所有類型ec2都可以使用, 可以同時有1000個instance連接到EFS)
+ - 同個ＶＰＣ內可以直接訪問ＦＥＳ，不在ＶＰＣ內要使用`ClassicLink`來訪問
+ - 在instance內的數據可以直接上傳EFS, 不在的可以透過Secure Copy (SCP)
+##### NVMe Instance storage
+ - I3en, I3, C6gd, C5d, C5ad, M6gd, M5d, M5dn, M5ad, R6gd, R5d, R5dn, R5ad, z1d, P3dn, G4dn, and F1, X1, X1e才有這個儲存方式
+ - 都會有加密，在`AWS Nitro hardware module`以`XTS-AES-256`來加密
+ - encryption keys is unique
+
+### Networking and security
+##### Elastic Fabric Adapter (EFA)
+
  
 ### Placement Groups
  - 要確保EC2 Instance之間的網路效率時，只放在同一個AZ是不足夠的：要在同一個Cluster Placement Group才是正確做法
