@@ -24,7 +24,11 @@
   - 而 Dedicated Hosts 也可以搭配 Reserved Instances 購買並預付較長期的合約換取更佳的價格折扣。
   
 ### Instance Types
-<a href="https://ppt.cc/ftKDHx"><img src="https://ppt.cc/ftKDHx@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
+| general-purpose              | compute-optimized | memory-optimized          | accelerated-computing            | storage-optimized |
+|------------------------------|-------------------|---------------------------|----------------------------------|-------------------|
+| 一般應用                         | 運算優化(CPU)         | 記憶體優化                     | 加速運算優化(GPU)                      | 儲存優化              |
+| 網頁應用程式伺服器,程式碼儲存槽（repository） | 資料分析、影音處理         | in-memory資料庫、Apache Spark | 影音呈向（rendering）、machine learning | 資料分析或分散式資料庫       |
+
 
 ### Storage
  - 在EBS-backed instance，預設行為是Instance terminated時，root EBS也會被刪掉，但可以透過設定讓他們的lifecycle獨立，讓EBS不會自動刪除
@@ -49,5 +53,5 @@
  - 可以跨AZ部署
   
 # ref
-https://ithelp.ithome.com.tw/articles/10192098
-https://aws.amazon.com/ec2/faqs/
+- https://ithelp.ithome.com.tw/articles/10192098
+- https://aws.amazon.com/ec2/faqs/
