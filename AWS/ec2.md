@@ -37,6 +37,21 @@
  - EBS always be in the same availability zone as the EC2 instance
  - Snapshot可以encrypted，如果是從encrypted volume create/restore的snapshot，都會是encrypted
  - Snapshot可以share，但只有unencrypted的可以share
+##### EBS
+ - 預設為`終止instance，自動刪除`代號為`N`
+ - SSD(transactional workloads, 事務處理工作負載) and HDD(throughput intensive workloads, 吞吐量工作負載)
+  - Throughput Optimized HDD (st1): 
+   - frequently accessed, large datasets and large I/O sizes
+   - e.g. MapReduce, Kafka, log processing, data warehouse, and ETL workloads
+  - Cold HDD (sc1): 
+   - lowest cost `per GB` of all EBS volume types
+   - less frequently, large and cold datasets
+  - IOPS SSD (io1 and io2):
+  - General Purpose SSD (gp2 and gp3):
+ - `IOPS io1 volume`，在同`AZ`內，可以共用16到`Nitro-based EC2 instances`
+ - EBS snapshots:
+  - only available through the Amazon EC2 APIs
+  - 
  
 ### Placement Groups
  - 要確保EC2 Instance之間的網路效率時，只放在同一個AZ是不足夠的：要在同一個Cluster Placement Group才是正確做法
