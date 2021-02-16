@@ -12,7 +12,7 @@
 |---------------|---------------|---------------|---------------|
 |A SQS Standard Queue|A SNS Topic|A managed message broker service|A Kinesis Data Stream|
 |託管佇列，可以解偶發送端跟接收端|發送通知給多個訂閱者|主要用在遷移本地數據到AWS|處理或分析串流資料|
-|可以用在新的服務|可以用在新的服務|舊有服務存在時，使用它|一條龍的服務？！|
+|可以用在新的服務|可以用在新的服務|舊有服務存在時，使用它|可以用在新的服務|
 | 1.a message queue service  | 1.send time-critical messages to multiple subscribers through a “push” mechanism | 1.If you're using messaging with `existing` applications, and want to move your messaging to the cloud quickly and easily   |message可以到多個應用程式並行處理（一個queue可以對應到多個consumer）|
 | 2.exchange messages through a polling model | 2.don't need to periodically check or “poll” for updates       |    ||
 |3.decouple sending and receiving components||||
