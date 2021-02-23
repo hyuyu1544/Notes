@@ -116,10 +116,146 @@
 - 狀態篩選 v.s. 無狀態篩選
     - 狀態篩選:
         - 會追蹤請求的來源
-        - 
+        - allow the return traffic
     - 無狀態篩選:
         - 只會檢查來源或目的地 IP 地址和目的地連接埠
-        - 忽略流量是新請求還是對請求的回覆
+        - ignoring whether the traffic is a new request or a reply to a request
+- 是否可在 Amazon VPC 中使用為 Amazon EC2 中的執行個體所建立的 SSH 金鑰對，或是在 Amazon EC2 中使用為 Amazon VPC 中的執行個體所建立的 SSH 金鑰對?
+    - yes
+- Can Amazon EC2 instances within a VPC communicate with Amazon EC2 instances `not` within a VPC?
+    - yes
+    - Internet gateway or VPN
+- Can Amazon EC2 instances within a VPC in one region communicate with Amazon EC2 instances within a VPC in `another` region?
+    - ???
+    - yes, instances in `one region` can communicate with each other using `Inter-Region` VPC Peering, public IP addresses, NAT gateway, NAT instances, VPN Connections or Direct Connect connections.
+- Can Amazon EC2 instances within a VPC communicte with Amazon S3?
+    - VPC endpoint (all traffic remains within Amazon's network)
+    - Internet gateway
+    - Direct Connect or VPN connection
+- Can I monitor the network traffic in my VPC?
+    - yes, `VPC traffic mirroring` and `VPC flow logs features`
+
+## VPC Traffic Mirroring
+- What is Amazon VPC traffic mirroring?
+    - 複制往返於Amazon EC2實例的網絡流量，並將其轉發到帶外安全和監視設備
+    - These appliances can be deployed on an individual EC2 instance or a fleet of instances behind a Network Load Balancer (NLB) with User Datagram Protocol (UDP) listener.
+- How does Amazon VPC traffic mirroring work?
+    - 1.`copies network traffic from Elastic Network Interface (ENI) of EC2 instances`
+    - 2.`mirrored traffic can be sent to another EC2 instance or to an NLB with a UDP listener`
+    - 3.`Traffic mirroring encapsulates all copied traffic with VXLAN headers`
+    - The mirror source and destination (monitoring appliances) can be in the same VPC or in a different VPC, connected via VPC peering or AWS Transit Gateway
+- Amazon VPC流量鏡像可以監視哪些資源？
+    - supports `network packet` captures at the `Elastic Network Interface (ENI) level` for EC2 instances
+    - supported on all `virtualized Nitro based` EC2 instances
+- What type of appliances are supported with Amazon VPC traffic mirroring?
+    - 幾乎任何network packet collector/broker or analytics tool都可以用
+- `Amazon VPC traffic mirroring` v.s. `Amazon VPC flow logs`
+    - `VPC traffic mirroring`: actual network traffic content
+    - `VPC flow logs`: 全部都收
+
+## Amazon VPC and EC2
+- 同個 VPC 不能跨region
+- VPC 可以跨AZ
+- subnet不能跨AZ
+- 啟動EC2 instance時，可以先指定subnet （就會在subnet下的AZ launch）
+- 創建subnet時，就要先指定AZ(不指定就在region隨便選一個)
+- ec2 instance 在不同ＡＺ間的數據傳輸費，$0.01 per GB
+- `DescribeInstances（）`可列出所有正在運行的實例
+- `DescribeVolumes（）`return all your EBS volumes
+- 一個VPC,可以有20個實例（超過要申請）
+- 可以使用現有的AMI（in same region）
+- 可以使用現有的Amazon EBS snapshots（in same region）
+- an instance launched in a VPC using an Amazon `EBS-backed AMI` maintains the same IP address when stopped and restarted
+- Can I use Amazon EC2 Reserved Instances with Amazon VPC?
+    - yes
+- 可以在Amazon VPC中使用Amazon CloudWatch
+- 可以在Amazon VPC中採用Auto Scaling
+- Can I launch Amazon EC2 Cluster Instances in a VPC?
+    - yes
+
+## Default VPCs
+- When you launch an instance `without` specifying a subnet-ID, your instance will be launched in your default VPC
+- benefits: `security group egress filtering`, `multiple IP addresses`...
+- account create after March 18, 2013, 就會有默認VPC（EC2-Classic and EC2-VPC）如果沒有，官方建議重新創一個帳號
+- Do I need to have a VPN connection to use a default VPC?
+    - no
+- 除了默認VPC之外，還可以創建其他VPC並使用
+- 可以在默認VPC中創建其他子網，private subnet
+- 每個region都可以有一個Default VPC
+- How many default subnets are in a default VPC?
+    - 1
+- 我可以指定哪個VPC是我的默認VPC嗎？
+    - 目前不行
+- 我可以指定哪些子網是我的默認子網嗎？
+    - 目前不行
+- 可以刪除默認的VPC (刪除後可重新創建)
+- 可以刪除默認子網 (刪除後可重新創建)
+- How are IAM accounts impacted by default VPC?
+    - If your AWS account has a default VPC, any IAM accounts associated with your AWS account use the same default VPC as your AWS account.
+
+## Elastic Network Interfaces
+- Can I `attach` or `detach` one or more network interfaces to an EC2 instance while it’s running?
+    - yes
+- Can I have `more than two` network interfaces attached to my EC2 instance?
+    - depends on the instance type
+- Network interfaces can only be attached to instances residing in the same Availability Zone
+- Network interfaces can only be attached to instances in the same VPC as the interface
+- You can `attach and detach` secondary interfaces (eth1-ethn) on an EC2 instance, but you `can’t detach` the eth0 interface
+- 我是否需要為與網絡接口關聯但網絡接口未附加到正在運行的實例的彈性IP地址付費？
+    - yes
+
+## Peering Connections
+- Peering connections can be created with VPCs in different regions
+- 不同帳號下的VPC也可對等連接
+- 創建對等連接不用付費，數據傳輸要付費
+- VPC peering connections `do not` require an Internet Gateway
+- Is VPC peering traffic within the region encrypted?
+    - no
+- 如果我將VPC A與VPC B對等，並且將VPC B與VPC C對等，這是否意味著VPC A和C對等？
+    - no
+- 跨區域VPC(Inter-Region VPC)對等連接不能引用安全組
+- 區域間VPC對等支持IPv6
+- 跨區域VPC對等不能與EC2-ClassicLink一起使用
+- Is Inter-Region VPC Peering traffic encrypted?
+    - Traffic is encrypted using modern AEAD (Authenticated Encryption with Associated Data) algorithms.
+
+## ClassicLink
+- Amazon Virtual Private Cloud（VPC）ClassicLink允許EC2-Classic平台中的EC2實例使用私有IP地址與VPC中的實例進行通信
+- 有跨可用區數據傳輸費用
+- 如何使用ClassicLink：
+    - EC2-Classic實例鏈接到VPC，並且是VPC中所選安全組的成員
+- The EC2-Classic instance does not become a member of the VPC
+- Can I use EC2 public DNS hostnames from my EC2-Classic and EC2-VPC instances to address each other, in order to communicate using private IP?
+    - no
+- 是否有不能為其啟用ClassicLink的VPC？
+    - 是的。對於具有在10.0.0.0/8範圍內的無類域間路由（CIDR）的VPC，不能啟用ClassicLink，但10.0.0.0/16和10.1.0.0/16除外。此外，不能為具有指向10.0.0.0/8 CIDR空間的路由表條目指向除“本地”以外的目標的任何VPC啟用ClassicLink。
+- 來自EC2-Classic實例的流量只能路由到VPC內的專用IP地址(不會通過Internet網關)
+- 在EC2-Classic實例的停止/啟動週期中，ClassicLink連接將不會持續
+
+## AWS PrivateLink
+- AWS PrivateLink使客戶能夠以高度可用和可擴展的方式訪問AWS上託管的服務
+- 將所有網絡流量保持在AWS網絡內
+- AWS PrivateLink當前提供哪些服務？
+    - EC2, ELB, Kinesis Streams, Service Catalog, EC2 Systems Manager, Amazon SNS, and AWS DataSync
+- Can I privately access services powered by AWS PrivateLink over AWS Direct Connect?
+    - yes
+- Currently, `no` CloudWatch `metric` is available for the interface-based VPC endpoint.
+
+## Bring Your Own IP
+- What is the Bring Your Own IP feature?
+    - 自帶IP（BYOIP）使客戶可以將其現有的公共可路由的全部IPv4或IPv6地址空間的全部或部分移至AWS，以與其AWS資源一起使用
+- Why should I use BYOIP?
+    - IP Reputation(信譽)：已經營有成
+    - 客戶白名單
+    - Hardcoded dependencies（硬編碼的依存關係）
+    - Regulation and compliance（法規和合規性）
+    - 本地IPv6網絡策略（On-prem IPv6 network policy）
+- How many IP ranges can I bring via BYOIP?
+    - 5 per account
+- Which RIR prefixes can I use for BYOIP?
+    - You can use ARIN, RIPE, and APNIC registered prefixes.
+- Can I move a BYOIP prefix from one AWS Region to another?
+    - yes
 
 
 ## Additional Questions
@@ -133,5 +269,9 @@
 
 
 
+
+
 # Reference
 https://aws.amazon.com/tw/vpc/faqs/
+
+https://tutorialsdojo.com/amazon-vpc/
