@@ -35,9 +35,11 @@ p.s. https://www.elastic.co/guide/en/elasticsearch/reference/6.8/indices-get-ind
 ### 75: delivery semantics(傳遞語義)
 
 At-most-once: 只做一次，存進es時若失敗，將丟失數據，因為offset在插入數據前就移到下一個位置了
+
 <a href="https://ppt.cc/fx2fYx"><img src="https://ppt.cc/fx2fYx@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
 
 at-least-once（default）:At-least-once is when offsets are committed `after` the message is processed.(要確保data是冪等(idempotent))
+
 <a href="https://ppt.cc/fDDB5x"><img src="https://ppt.cc/fDDB5x@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
 
 exactly-once: only for Kafka to Kafka workflow using Kafka Streams.
@@ -53,6 +55,7 @@ exactly-once: only for Kafka to Kafka workflow using Kafka Streams.
 poll model: consumer `poll` data
 可以設置`max.poll.records`，來提高throughput（越高須越多的memory）
 `fetch.max.bytes`
+
 <a href="https://ibb.co/mDszDzw"><img src="https://i.ibb.co/SsTvsv8/Screen-Shot-2021-03-02-at-5-14-37-AM.png" alt="Screen-Shot-2021-03-02-at-5-14-37-AM" border="0"></a>
 
 
@@ -61,6 +64,7 @@ server `pushes` data to the consumer and the consumer waits
 
 ### 78: Consumer Offset Commit Strategies
 (1)enable.auto.commit = true & synchronous processing of batches (consumer直到處理完所有message,才poll;consumer也會有丟失message的風險，因為offset已經move on 了)
+
 <a href="https://ppt.cc/fQodtx"><img src="https://ppt.cc/fQodtx@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
 
 (2)enable.auto.commit = false & manually(手動) commit the offsets
@@ -68,6 +72,7 @@ server `pushes` data to the consumer and the consumer waits
 properties.setProperty(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "false"); // disable auto commit of offsets
 properties.setProperty(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, "100"); // max poll record at same time
 ```
+
 <a href="https://ppt.cc/fj97jx"><img src="https://ppt.cc/fj97jx@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
 
 用來確認consumer offset停的位置
@@ -121,7 +126,7 @@ Kafka Connect Source:它大大簡化了將數據從來源導入Kafka。
 Kafka接收器，我們將使用Kafka Connect Sink
 
 
-my summary: 
+summary: 
 因為大部分會進到kafka的資料來源大多很相似，資料出kafka後儲存的位置也很相近，所以大部分的工都有人做了（fault tolerance, idempotence, distribution, and ordering），就把這些工彙整成為Connect Cluster source API。
 接著使用kafka stream對資料進行過濾、aggregate等，最後再把資料拉回sink中。
 好處在於scales很棒，可以從小專案擴展到公司規模。
@@ -201,13 +206,13 @@ summary:
 
 ### 91: Choosing Partition Count & Replication Factor
 Partition Count: 
-    - 取決於預期的throughput(建議在set up 前就先測量)
-    - 多個Partition表示：
-        - 更好的throughput及平行處理
-        - 可以同時有更多consumer在consumer group
-        - 使用槓桿來操縱更大的cluster
-        - but, you have more files opened on Kafka
-        - but, have more elections that Zookeeper will perform for you
+- 取決於預期的throughput(建議在set up 前就先測量)
+- 多個Partition表示：
+    - 更好的throughput及平行處理
+    - 可以同時有更多consumer在consumer group
+    - 使用槓桿來操縱更大的cluster
+    - but, you have more files opened on Kafka
+    - but, have more elections that Zookeeper will perform for you
         
 
 ### 92: Kafka Topics Naming Convention約定的命名方式
