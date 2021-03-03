@@ -114,16 +114,17 @@ kafka-consumer-groups --boostrap-server 127.0.0.1:9092 --group kafka-demo-elasti
 concept: code and connectors re-use
 
 歷史演進：
-`0.8`:可以複製topic, 簡化producer API 及壓縮log
-`0.9`:簡化consumer API, 不需要Zookeeper來存儲訪問權限, 增強了安全性及多了 Kafka Connect APIs
-`0.10.0`:added Kafka Streams API
-後來的幾次小改版，又新增了improved Kafka Connect API and a Single Message Transforms API
+
+- `0.8`:可以複製topic, 簡化producer API 及壓縮log
+- `0.9`:簡化consumer API, 不需要Zookeeper來存儲訪問權限, 增強了安全性及多了 Kafka Connect APIs
+- `0.10.0`:added Kafka Streams API
+- 後來的幾次小改版，又新增了improved Kafka Connect API and a Single Message Transforms API
 
 四個常用案例：
 <a href="https://ppt.cc/fNDWGx"><img src="https://ppt.cc/fNDWGx@.png" border="0" alt="PPT.cc縮圖服務" title="PPT.cc縮圖服務"></a>
-Kafka Connect Source:它大大簡化了將數據從來源導入Kafka。
-對於從Kafka到Kafka，我們稍後會看到它是Kafka Streams
-Kafka接收器，我們將使用Kafka Connect Sink
+- Kafka Connect Source:它大大簡化了將數據從來源導入Kafka。
+- 對於從Kafka到Kafka，我們稍後會看到它是Kafka Streams
+- Kafka接收器，我們將使用Kafka Connect Sink
 
 
 summary: 
@@ -205,14 +206,22 @@ summary:
 ## 13 Real World Insights and Case Studies (Big Data / Fast Data)
 
 ### 91: Choosing Partition Count & Replication Factor
-Partition Count: 
+
+Partitions Counts: 
 - 取決於預期的throughput(建議在set up 前就先測量)
+- 多會浪費，少可能效能不足
+- the more partitions you have, the more brokers you will utilize.
+- small cluster: less than 6 brokers（Partitions count是brokers的１倍,建議至少都3個broker以上）
+- big cluster: Partitions count是brokers的2~3倍
 - 多個Partition表示：
     - 更好的throughput及平行處理
     - 可以同時有更多consumer在consumer group
     - 使用槓桿來操縱更大的cluster
     - but, you have more files opened on Kafka
     - but, have more elections that Zookeeper will perform for you
+replication factor:
+    - Should be at least two, usually three, maximum four
+    - more replication, higher latency
         
 
 ### 92: Kafka Topics Naming Convention約定的命名方式
